@@ -20,16 +20,15 @@
 body {
   font-size: 100%;
   font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 4rem;
 }
 
 .container {
+  width: 191px;
   display: flex;
   flex-direction: column;
-
+  
+  margin: 0 auto;
 }
 
 .flex {
@@ -37,48 +36,49 @@ body {
 }
 
 .num {
-  font-size: .9rem;
-  width: 1.5rem;
-  height: 1.5rem; 
-  border: 2px solid gray;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.num:not(.num--four)::before {
-  content: "";
-  position: absolute;
-  width: calc(1.75rem + 2px);
-  height: 2px;
-  background-color: gray;
-  left: 100%;
-}
-
-.num:not(.num--four)::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: var(--blue);
-  left: 100%;
-  transition: width 350ms ease-out;
-}
-
-.active:not(.num--four)::after {
-  width: calc(1.75rem + 2px)
+  stroke: gray;
+  stroke-width: 2px;
+  fill: none;
 }
 
 .blue {
-  border-color: var(--blue);
-  transition: border-color 300ms ease-in 300ms;
+  stroke: var(--blue);
 }
 
-.num + .num {
-  margin-left: 1.75rem;
+text {
+  font-size: .8rem;
 }
+
+line {
+  stroke: gray;
+  stroke-width: 2px;
+}
+
+/* animations for the line - pause (wait for circle to transition) on reverse/prev click */
+.top {
+  stroke-dasharray: 0 28;
+  transition: all 700ms 450ms;
+}
+
+.top.blue {
+  stroke-dasharray: 28 0;
+  transition: all 400ms;
+}
+
+
+/* animations for the circle - do not pause on reverse/prev click */
+.top-circle {
+  stroke-dashoffset: 31.215;
+  stroke-dasharray: 0 62.43;
+  transition: all 800ms;
+}
+
+/* stroke on cirle was a touch short - increased the "dash" by one unit and decresed the "gap" by one unit */
+.top-circle.blue {
+  stroke-dasharray: 32.215 30.215;
+  transition: all 800ms 350ms;
+}
+
 
 .btns {
   margin: 1.5rem auto;

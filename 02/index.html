@@ -3,18 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Day 02</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="container">
-    <div class="flex">
-      <div class="num num--one blue">1</div>
-      <div class="num num--two">2</div>
-      <div class="num num--three">3</div>
-      <div class="num num--four">4</div>
-    </div>
+    <svg width="191" height="40">
+      <circle r="10" cx="20" cy="20" class="num num--one"></circle>
+      <circle r="10" cx="20" cy="20" class="num num--one blue"></circle>
+      <line x1="31" y1="20" x2="59" y2="20" />
+      <line class="top" x1="31" y1="20" x2="59" y2="20" />
+      <circle r="10" cx="70" cy="20" class="num num--two"></circle>
+      <circle r="10" cx="70" cy="20" class="num num--two top-circle"></circle>
+      <!-- circle getBBox(): SVGRect {x: 10, y: 10, width: 20, height: 20} -->
+      <circle transform="translate(0, 40) scale(1, -1)" r="10" cx="70" cy="20" class="num num--two top-circle"></circle>
+      <line x1="81" y1="20" x2="109" y2="20" />
+      <line class="top" x1="81" y1="20" x2="109" y2="20" />
+      <circle r="10" cx="120" cy="20" class="num num--three"></circle>
+      <circle r="10" cx="120" cy="20" class="num num--three top-circle"></circle>
+      <circle transform="translate(50, 40) scale(1, -1)" r="10" cx="70" cy="20" class="num num--two top-circle"></circle>
+      <line x1="131" y1="20" x2="159" y2="20" />
+      <line class="top" x1="131" y1="20" x2="159" y2="20" />
+      <circle r="10" cx="170" cy="20" class="num num--four"></circle>
+      <circle r="10" cx="170" cy="20" class="num num--four top-circle"></circle>
+      <circle transform="translate(100, 40) scale(1, -1)" r="10" cx="70" cy="20" class="num num--two top-circle"></circle>
+      <text x="16" y="24.5">1</text>
+      <text x="66.5" y="24.5">2</text>
+      <text x="116.5" y="24.5">3</text>
+      <text x="166.5" y="24.5">4</text>
+    </svg>
+
     <div class="btns">
       <button>Prev</button>
       <button class="enabled">Next</button>
