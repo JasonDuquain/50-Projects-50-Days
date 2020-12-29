@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap");
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-variation-settings: 
+    "MONO" var(--MONO), "CASL" var(--CASL),
+    "slnt" var(--slnt), "CRSV" var(--CRSV), "wght" var(--wght);
+}
+
+
+:root {
+  --transition-time: 1000ms;
+    --MONO: 0;   /* Monospace    */
+    --CASL: 0;   /* Casual       */
+    --slnt: 0;   /* Upright      */
+    --CRSV: 0.5; /* Auto Cursive */
+    --wght: 300; /* Weight -- better to use font-weight but adding this for practice */
+}
+
+body {
+  font-size: 100%;
+  
+}
+
+.container {
+  
+}
+
